@@ -9,6 +9,6 @@ export const Quit = () => {
   }
 
   return (
-    <button onClick={handleQuit}>quit</button>
+    <button className="auth-quit" onClick={handleQuit}>quit</button>
   )
 }

@@ -1,4 +1,4 @@
-.auth-form
+form.auth-form
   display: grid
   grid-template: repeat(3, 1fr) / repeat(2, 1fr)
   gap: 1rem
@@ -18,14 +18,24 @@
     border: 2px solid var(--bg)
     background-color: var(--fill)
 
-.auth-email
+
+
+input.auth-email
   grid-column: 1 / 3
   grid-row: 1
 
-.auth-password
+input.auth-password
   grid-column: 1 / 3
   grid-row: 2
 
-.auth-title
+h1.auth-title
   font-size: 2rem
   line-height: 2.5rem
+
+
+
+button.auth-quit
+  padding: 0.2rem 0.5rem
+  border-radius: 0.5rem
+  font-size: 0.8rem
+  background-color: var(--fill)

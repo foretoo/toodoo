@@ -1,5 +1,6 @@
 import "./auth.sass"
 import { useRef } from "preact/hooks"
+import { readUser, writeUser } from "service/user"
 
 
 
@@ -13,17 +14,23 @@ export const Auth = () => {
     passwordRef.current!.value,
   ])).current
 
+
+
   const handleSignUp = async (e: MouseEvent) => {
     e.preventDefault()
     const [ email, password ] = getInput()
-    console.log(email, password)
+    writeUser(email, password)
+      .then((id) => console.log(id))
   }
 
   const handleSignIn = async (e: MouseEvent) => {
     e.preventDefault()
     const [ email, password ] = getInput()
-    console.log(email, password)
+    readUser(email, password)
+      .then((id) => console.log(id))
   }
+
+
 
   return (
     <>

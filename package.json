@@ -1,0 +1,31 @@
+{
+  "name": "toodoo",
+  "version": "0.0.0",
+  "description": "another to-do application",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "preact": "^10.5.15"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.1.5",
+    "@typescript-eslint/eslint-plugin": "^5.33.0",
+    "@typescript-eslint/parser": "^5.33.0",
+    "eslint": "^8.21.0",
+    "typescript": "^4.5.4",
+    "vite": "^2.9.15"
+  },
+  "author": {
+    "name": "Sergey Borovikov",
+    "email": "foretoo@proton.me",
+    "url": "https://foretoo.github.io"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/foretoo/toodoo.git"
+  },
+  "homepage": "https://github.com/foretoo/toodoo#readme"
+}

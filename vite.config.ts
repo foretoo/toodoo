@@ -9,4 +9,14 @@ export default defineConfig({
     open: true,
     host: true,
   },
+  resolve: {
+    alias: {
+      view: "/src/view",
+      service: "/src/service",
+      components: "/src/components",
+
+      context: "/src/context.tsx",
+      types: "/src/types.ts",
+    },
+  },
 })

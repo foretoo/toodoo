@@ -1,7 +1,7 @@
 import { Header } from "./view/Header"
 import { Footer } from "./view/Footer"
 import { Main } from "./view/Main"
-import { Auth } from "./view/Auth"
+import { Auth } from "./components/auth"
 
 export function App() {
   return (

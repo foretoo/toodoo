@@ -1,4 +1,4 @@
-import "./sass/auth.sass"
+import "./auth.sass"
 import { useRef } from "preact/hooks"
 
 export const Auth = () => {

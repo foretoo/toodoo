@@ -1,0 +1,1 @@
+export type JSXChildren = JSX.Element | string | number | null

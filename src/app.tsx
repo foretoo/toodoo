@@ -6,7 +6,7 @@ export function App() {
   return (
     <>
       <Header />
-      <Main />
+      <Main>Too Doo</Main>
       <Footer />
     </>
   )

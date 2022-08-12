@@ -1,5 +1,10 @@
+import { JSXChildren } from "../types"
 import "./sass/main.sass"
 
-export const Main = () => {
-  return <main>Too Doo</main>
+type MainProps = { children: JSXChildren }
+
+export const Main = (
+  { children }: MainProps
+) => {
+  return <main>{children}</main>
 }

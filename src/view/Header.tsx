@@ -1,3 +1,7 @@
+import { Quit } from "components/auth"
+import { useData } from "context"
+
 export const Header = () => {
-  return <header></header>
+  const data = useData()
+  return <header>{data ? <Quit /> : null}</header>
 }

@@ -1,17 +1,19 @@
 import { createContext } from "preact"
-import { useContext, useState } from "preact/hooks"
-import { IContext, IData, JSXChildren } from "./types"
+import { StateUpdater, useContext, useEffect, useState } from "preact/hooks"
+import { IData, JSXChildren } from "./types"
 
 
 
-export const Context = createContext<IContext>(null!)
+export const Context = createContext<IData>(null!)
+export let setData: StateUpdater<IData>
 
 export const ContextProvider = (
   { children }: { children: JSXChildren }
 ) => {
-  const [ data, setData ] = useState<IData>(null!)
+  const [ data, _setData ] = useState<IData>(null!)
+  useEffect(() => { setData = _setData }, [])
   return (
-    <Context.Provider value={{ data, setData }}>
+    <Context.Provider value={data}>
       {children}
     </Context.Provider>
   )

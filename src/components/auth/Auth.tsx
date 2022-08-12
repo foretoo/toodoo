@@ -1,6 +1,8 @@
 import "./auth.sass"
 import { useRef } from "preact/hooks"
 
+
+
 export const Auth = () => {
 
   const emailRef = useRef<HTMLInputElement>(null)
@@ -25,9 +27,9 @@ export const Auth = () => {
 
   return (
     <>
-      <h1 className="auth-title">
-        Too Doo
-      </h1>
+      <h1 className="auth-title">Too Doo</h1>
+
+
       <form className="auth-form">
         <input
           className="auth-email"
@@ -41,6 +43,8 @@ export const Auth = () => {
           ref={passwordRef}
           placeholder="password"
         />
+
+
         <button
           className="auth-signin"
           onClick={handleSignIn}

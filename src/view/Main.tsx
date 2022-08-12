@@ -1,5 +1,5 @@
-import { JSXChildren } from "../types"
 import "./sass/main.sass"
+import { JSXChildren } from "../types"
 
 type MainProps = { children: JSXChildren }
 

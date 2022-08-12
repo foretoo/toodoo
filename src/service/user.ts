@@ -1,6 +1,15 @@
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth"
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, User } from "firebase/auth"
 import { ref, set } from "firebase/database"
 import { auth, catchError, db } from "./init"
+
+
+
+
+export const subscribeUser = (
+  callback: (user: User | null) => void
+) => {
+  return onAuthStateChanged(auth, callback)
+}
 
 
 

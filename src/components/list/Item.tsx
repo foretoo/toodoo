@@ -7,7 +7,7 @@ export const Item = (
     <li className="todo-item">
       <input type="checkbox" checked={done} onChange={() => console.log(id)} />
       <span className={done ? "done" : ""}>{name}</span>
-      <button onClick={() => console.log(id)} >✕</button>
+      <button className="del" onClick={() => console.log(id)} >✕</button>
     </li>
   )
 }

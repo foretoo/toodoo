@@ -1,8 +1,17 @@
 ul.todo-list
   list-style: none
+  padding: 0 1rem
 
 li.todo-item
-  padding: 1rem
+  padding: 1rem 0
+  display: flex
+  gap: 0.5rem
+  border-bottom: 1px solid var(--bg)
 
   > span.done
-    text-decoration: line-through 
+    text-decoration: line-through
+
+  > button.del
+    margin-left: auto
+    color: var(--text-l)
+    background-color: transparent

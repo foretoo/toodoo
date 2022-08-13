@@ -1,6 +1,7 @@
-import { setData } from "context"
 import { useEffect } from "preact/hooks"
 import { subscribeData } from "service/data"
+import { setData } from "context"
+import { List } from "components/list"
 
 export const App = () => {
 
@@ -10,6 +11,6 @@ export const App = () => {
   }, [])
 
   return (
-    <h1>App</h1>
+    <List />
   )
 }

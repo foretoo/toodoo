@@ -1,3 +1,4 @@
 export type JSXChildren = JSX.Element | string | number | null
 
-export type IData = { id: string }
+export type IToDo = { name: string, done: boolean }
+export type IData = { id: string, todo: IToDo[] }

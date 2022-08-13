@@ -11,10 +11,16 @@ li.todo-item
   &:last-child
     border-bottom: 1px solid transparent
 
+  > span
+    flex-grow: 1
+
+  > input,
+  > button
+    flex-shrink: 0
+
   > span.done
     text-decoration: line-through
 
   > button.del
-    margin-left: auto
     color: var(--text-l)
     background-color: transparent

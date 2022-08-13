@@ -8,11 +8,12 @@ export const List = () => {
   
   const data = useData()
 
-  const list = data.todo.map(({ name, done }, i) => (
+  const list = data.todo.map(({ name, done }, id) => (
     <Item
-      key={`${i}-${done}-${name}`}
+      key={`${id}-${done}-${name}`}
       name={name}
       done={done}
+      id={id}
     />
   ))
 

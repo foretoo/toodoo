@@ -34,10 +34,13 @@ body
     font-size: 0.8rem
 
 #root
-  width: min(100%, 960px)
   overflow: auto
   display: grid
   grid-template: 3rem auto 3rem / auto
+  justify-items: center
+
+  > *
+    width: min(100%, 960px)
 
 button
   cursor: pointer

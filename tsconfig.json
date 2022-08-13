@@ -19,9 +19,8 @@
     "jsxFactory": "h",
     "jsxFragmentFactory": "Fragment",
     "paths": {
-      "context": [ "./src/context.tsx" ],
-      "types": [ "./src/types.ts" ],
-
+      "app": [ "./src/app" ],
+      "app/*": [ "./src/app/*" ],
       "view": [ "./src/view" ],
       "view/*": [ "./src/view/*" ],
       "service": [ "./src/service" ],

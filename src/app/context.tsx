@@ -1,6 +1,6 @@
 import { createContext } from "preact"
 import { StateUpdater, useContext, useEffect, useState } from "preact/hooks"
-import { IData, JSXChildren } from "./types"
+import { IData, JSXChildren } from "app/types"
 
 
 

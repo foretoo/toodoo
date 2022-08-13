@@ -11,12 +11,10 @@ export default defineConfig({
   },
   resolve: {
     alias: {
+      app: "/src/app",
       view: "/src/view",
       service: "/src/service",
       components: "/src/components",
-
-      context: "/src/context.tsx",
-      types: "/src/types.ts",
     },
   },
 })

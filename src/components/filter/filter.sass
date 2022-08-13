@@ -3,17 +3,20 @@ fieldset.filter
   align-items: center
 
   > span
+    color: var(--text-l)
     margin-right: 1rem
+
+    &.active
+      color: var(--text)
 
   > label
     padding: 0.5rem
     line-height: 0
-    border: 1px solid transparent
     border-radius: 50%
     cursor: pointer
 
     &.active
-      border: 1px solid var(--text-l)
+      background-color: var(--fill)
 
     > input
       pointer-events: none

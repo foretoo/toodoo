@@ -35,7 +35,7 @@ export const Filter = () => {
 
   return (
     <fieldset className="filter">
-      <span>filter</span>
+      <span className={filter !== "ALL" ? "active" : ""}>filter</span>
       <label
         className={filter === "KEEN" ? "active" : ""}
         tabIndex={0}

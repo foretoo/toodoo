@@ -1,0 +1,19 @@
+fieldset.filter
+  display: flex
+  align-items: center
+
+  > span
+    margin-right: 1rem
+
+  > label
+    padding: 0.5rem
+    line-height: 0
+    border: 1px solid transparent
+    border-radius: 50%
+    cursor: pointer
+
+    &.active
+      border: 1px solid var(--text-l)
+
+    > input
+      pointer-events: none

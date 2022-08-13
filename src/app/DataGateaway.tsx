@@ -8,10 +8,13 @@ import { setData, useData } from "app/context"
 export const DataGateaway = (
   { children }: { children: JSXChildren }
 ) => {
+
   const data = useData()
+
   useEffect(() => {
     const unsubscribe = subscribeData((data) => setData(data))
     return unsubscribe
   }, [])
+  
   return data ? <>{children}</> : null
 }

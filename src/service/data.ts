@@ -1,5 +1,5 @@
 import { ref, onValue, set } from "firebase/database"
-import { IData, IToDo } from "app/types"
+import { IData, IFilter, IToDo } from "app/types"
 import { auth, catchError, db } from "service/init"
 
 
@@ -25,4 +25,11 @@ export const writeCompleteToDo = (
 ) => {
   const userRef = ref(db, "users/" + auth.currentUser!.uid + "/todo/" + id + "/done")
   set(userRef, done).catch(catchError)
+}
+
+export const writeFilter = (
+  filter: IFilter,
+) => {
+  const userRef = ref(db, "users/" + auth.currentUser!.uid + "/filter")
+  set(userRef, filter).catch(catchError)
 }

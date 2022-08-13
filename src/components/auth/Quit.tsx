@@ -1,4 +1,4 @@
-import { setData } from "context"
+import { setData } from "app/context"
 import { quit } from "service/user"
 
 export const Quit = () => {

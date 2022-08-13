@@ -1,6 +1,6 @@
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, User } from "firebase/auth"
 import { ref, set } from "firebase/database"
-import { auth, catchError, db } from "./init"
+import { auth, catchError, db } from "service/init"
 
 
 

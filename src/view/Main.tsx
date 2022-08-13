@@ -1,6 +1,6 @@
 import "./sass/main.sass"
-import { JSXChildren } from "../types"
-import { useData } from "context"
+import { JSXChildren } from "app/types"
+import { useData } from "app/context"
 
 type MainProps = { children: JSXChildren }
 

@@ -1,5 +1,5 @@
 import "./list.sass"
-import { useData } from "context"
+import { useData } from "app/context"
 
 
 

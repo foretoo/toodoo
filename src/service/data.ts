@@ -1,6 +1,6 @@
 import { ref, onValue } from "firebase/database"
-import { IData } from "types"
-import { auth, db } from "./init"
+import { IData } from "app/types"
+import { auth, db } from "service/init"
 
 
 

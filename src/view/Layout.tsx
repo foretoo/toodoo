@@ -1,24 +1,7 @@
-import { useEffect, useState } from "preact/hooks"
-import { subscribeUser } from "service/user"
 import { Header } from "view/Header"
 import { Footer } from "view/Footer"
 import { Main } from "view/Main"
-import { Auth } from "components/auth"
-import { App } from "./App"
-
-
-
-const Entry = () => {
-
-  const [ content, setContent ] = useState<JSX.Element | null>(null)
-  
-  useEffect(() => {
-    const unsubscribe = subscribeUser((user) => setContent(user ? <App /> : <Auth />))
-    return unsubscribe
-  }, [])
-
-  return content
-}
+import { AuthRouter } from "components/auth/AuthRouter"
 
 
 
@@ -27,7 +10,7 @@ export const Layout = () => {
     <>
       <Header />
       <Main>
-        <Entry />
+        <AuthRouter />
       </Main>
       <Footer />
     </>

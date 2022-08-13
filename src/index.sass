@@ -1,13 +1,18 @@
 :root
-  --light-h: #eee
-  --light-m: #ccc
-  --dark-h: #111
-  --grey: #777
+  --dark-1: #0001
+  --dark-2: #0003
+  --dark-3: #0005
+  --dark-5: #000d
 
-  --bg: var(--light-h)
-  --text: var(--dark-h)
-  --text-l: var(--light-m)
+  --blue: #48f
+
+  --bg: var(--dark-1)
   --fill: white
+  --text: var(--dark-5)
+  --text-m: var(--dark-3)
+  --text-l: var(--dark-2)
+
+  --highlight: var(--blue)
 
 *
   margin: 0
@@ -24,11 +29,11 @@ html, body, #root
   height: 100%
   position: fixed
   overflow: hidden
-  background-color: var(--bg)
 
 body
   display: flex
   justify-content: center
+  background-color: var(--bg)
 
   *
     font-size: 0.8rem

@@ -1,4 +1,4 @@
-import { MutableRef, useLayoutEffect, useRef, useState } from "preact/hooks"
+import { MutableRef, useLayoutEffect, useRef } from "preact/hooks"
 import { gsap } from "gsap"
 
 export const Track = (

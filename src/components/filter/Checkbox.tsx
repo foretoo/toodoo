@@ -1,12 +1,10 @@
-import { IFilter } from "app/types"
-
 type BoxProps = {
   checked: boolean,
   callback: (checked: boolean) => void,
   isActive: () => boolean
 }
 
-export const Box = (
+export const Checkbox = (
   { checked, callback, isActive }: BoxProps
 ) => {
 

@@ -2,7 +2,7 @@ import "./filter.sass"
 import { writeFilter } from "service/data"
 import { useData } from "app/context"
 import { IFilter } from "app/types"
-import { Box } from "./Box"
+import { Checkbox } from "./Checkbox"
 
 
 
@@ -25,12 +25,12 @@ export const Filter = () => {
   return (
     <fieldset className="filter">
       <span className={filter !== "ALL" ? "active" : ""}>filter</span>
-      <Box
+      <Checkbox
         checked={false}
         callback={handleFilter}
         isActive={isKeen}
       />
-      <Box
+      <Checkbox
         checked={true}
         callback={handleFilter}
         isActive={isDone}

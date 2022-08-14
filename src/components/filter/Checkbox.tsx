@@ -1,11 +1,14 @@
+import { forwardRef } from "preact/compat"
+
 type BoxProps = {
   checked: boolean,
   callback: (checked: boolean) => void,
   isActive: () => boolean
 }
 
-export const Checkbox = (
-  { checked, callback, isActive }: BoxProps
+export const Checkbox = forwardRef<HTMLLabelElement[], BoxProps>((
+  { checked, callback, isActive },
+  refs,
 ) => {
 
   const getValue = (e: Event) => {
@@ -29,6 +32,7 @@ export const Checkbox = (
 
   return (
     <label
+      ref={(label) => refs.current![checked ? 1 : 0] = label!}
       className={isActive() ? "active" : ""}
       tabIndex={0}
       onClick={handleClick}
@@ -43,4 +47,4 @@ export const Checkbox = (
       />
     </label>
   )
-}
+})

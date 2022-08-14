@@ -1,28 +1,14 @@
+import "./filter.sass"
 import { writeFilter } from "service/data"
 import { useData } from "app/context"
 import { IFilter } from "app/types"
-import "./filter.sass"
+import { Box } from "./Box"
+
+
 
 export const Filter = () => {
 
   const { filter } = useData()
-
-  const handleClick = (e: MouseEvent) => {
-    e.preventDefault()
-    e.stopPropagation()
-    const label = e.target as HTMLLabelElement
-    const input = label.children[0] as HTMLInputElement
-    handleFilter(input.checked)
-  }
-
-  const handleKeypress = (e: KeyboardEvent) => {
-    if (e.code === "Space" || e.code === "Enter") {
-      e.preventDefault()
-      const label = e.target as HTMLLabelElement
-      const input = label.children[0] as HTMLInputElement
-      handleFilter(input.checked)
-    }
-  }
 
   const handleFilter = (checked: boolean) => {
     let newfilter: IFilter
@@ -33,37 +19,22 @@ export const Filter = () => {
     writeFilter(newfilter)
   }
 
+  const isKeen = () => filter === "KEEN"
+  const isDone = () => filter === "DONE"
+
   return (
     <fieldset className="filter">
       <span className={filter !== "ALL" ? "active" : ""}>filter</span>
-      <label
-        className={filter === "KEEN" ? "active" : ""}
-        tabIndex={0}
-        onClick={handleClick}
-        onKeyPress={handleKeypress}
-      >
-        <input
-          type="checkbox"
-          checked={false}
-          disabled={filter === "KEEN" ? false : true}
-          tabIndex={-1}
-          onClick={(e) => e.preventDefault()}
-        />
-      </label>
-      <label
-        className={filter === "DONE" ? "active" : ""}
-        tabIndex={0}
-        onClick={handleClick}
-        onKeyPress={handleKeypress}
-      >
-        <input
-          type="checkbox"
-          checked={true}
-          disabled={filter === "DONE" ? false : true}
-          tabIndex={-1}
-          onClick={(e) => e.preventDefault()}
-        />
-      </label>
+      <Box
+        checked={false}
+        callback={handleFilter}
+        isActive={isKeen}
+      />
+      <Box
+        checked={true}
+        callback={handleFilter}
+        isActive={isDone}
+      />
     </fieldset>
   )
 }

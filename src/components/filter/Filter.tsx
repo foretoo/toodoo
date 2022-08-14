@@ -3,6 +3,7 @@ import { writeFilter } from "service/data"
 import { useData } from "app/context"
 import { IFilter } from "app/types"
 import { Checkbox } from "./Checkbox"
+import { Track } from "./Track"
 import { useRef } from "preact/hooks"
 
 
@@ -40,6 +41,7 @@ export const Filter = () => {
         callback={handleFilter}
         isActive={isDone}
       />
+      <Track refs={labelRefs} />
     </fieldset>
   )
 }

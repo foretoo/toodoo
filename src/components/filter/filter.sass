@@ -1,6 +1,7 @@
 fieldset.filter
   display: flex
   align-items: center
+  position: relative
 
   > span
     color: var(--text-m)
@@ -16,3 +17,10 @@ fieldset.filter
 
     > input
       pointer-events: none
+
+  > div.track
+    position: absolute
+    border-radius: 50%
+    background-color: var(--fill)
+    transform-origin: center
+    z-index: -1

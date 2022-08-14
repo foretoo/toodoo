@@ -10,6 +10,7 @@
   "dependencies": {
     "animejs": "^3.2.1",
     "firebase": "^9.9.2",
+    "gsap": "^3.10.4",
     "preact": "^10.5.15"
   },
   "devDependencies": {

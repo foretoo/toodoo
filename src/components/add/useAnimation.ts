@@ -1,5 +1,5 @@
 import { useLayoutEffect, useRef, useState } from "preact/hooks"
-import anime from "animejs"
+import { gsap } from "gsap"
 
 export const useAnimation = (trigger: boolean) => {
 
@@ -15,11 +15,7 @@ export const useAnimation = (trigger: boolean) => {
 
   if (trigger !== animateTrigger) {
     setAnimateTrigger(trigger)
-    anime({
-      targets: ref.current,
-      marginRight: `${trigger ? 0 : -widthRef.current}px`,
-      easing: "easeOutCubic"
-    })
+    gsap.to(ref.current, { marginRight: trigger ? 0 : -widthRef.current })
   }
 
   return ref

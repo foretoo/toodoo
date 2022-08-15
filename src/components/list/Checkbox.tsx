@@ -1,12 +1,17 @@
+import { useHoverAnimation } from "./useHoverAnimation"
+
 type CheckboxProps = {
   id: number,
   done: boolean,
+  over: boolean,
   completeDoo: (e: Event, id: number) => void
 }
 
 export const Checkbox = (
-  { id, done, completeDoo }: CheckboxProps
+  { id, done, over, completeDoo }: CheckboxProps
 ) => {
+
+  const labelRef = useHoverAnimation(over)
 
   const handleClick = (e: MouseEvent) => {
     e.preventDefault()
@@ -23,6 +28,7 @@ export const Checkbox = (
 
   return (
     <label
+      ref={labelRef}
       tabIndex={0}
       onClick={handleClick}
       onKeyPress={handleKeypress}

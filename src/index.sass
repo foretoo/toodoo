@@ -1,13 +1,19 @@
 :root
-  --dark-1: #0001
+  --dark-1: #eee
   --dark-2: #0003
   --dark-3: #0005
   --dark-5: #000d
 
-  --blue: #48f
+  --light-1: #111
+  --light-2: #fff3
+  --light-3: #fff6
+  --light-5: #fffd
+
+  --highlight: #48f
 
   --bg: var(--dark-1)
   --fill: white
+  --key: white
   --text: var(--dark-5)
   --text-m: var(--dark-3)
   --text-l: var(--dark-2)
@@ -33,7 +39,6 @@ html, body, #root
 body
   display: flex
   justify-content: center
-  background-color: var(--bg)
 
   *
     font-size: 0.8rem
@@ -43,6 +48,7 @@ body
   display: grid
   grid-template: 3rem auto 3rem / auto
   justify-items: center
+  background-color: var(--bg)
 
   > *
     width: min(100%, 960px)

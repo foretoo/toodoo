@@ -10,8 +10,9 @@ export const List = () => {
   const data = useData()
 
   const completeDoo = (e: Event, id: number) => {
-    const done = (e.target as HTMLInputElement).checked
-    writeCompleteToDo(id, done)
+    const label = e.target as HTMLLabelElement
+    const done = (label.children[0] as HTMLInputElement).checked
+    writeCompleteToDo(id, !done)
   }
   
   const deleteDoo = (id: number) => {

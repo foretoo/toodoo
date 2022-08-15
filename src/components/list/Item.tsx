@@ -1,5 +1,6 @@
 import { IToDo } from "app/types"
 import { useState } from "preact/hooks"
+import { Button } from "./Button"
 import { Checkbox } from "./Checkbox"
 
 type ItemProps = IToDo & {
@@ -22,7 +23,7 @@ export const Item = (
     >
       <Checkbox id={id} done={done} completeDoo={completeDoo} over={mouseOver} />
       <span className={done ? "done" : ""}>{name}</span>
-      <button className="del" onClick={() => deleteDoo(id)}>✕</button>
+      <Button id={id} over={mouseOver} deleteDoo={deleteDoo} />
     </li>
   )
 }

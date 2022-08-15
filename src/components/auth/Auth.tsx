@@ -20,14 +20,12 @@ export const Auth = () => {
     e.preventDefault()
     const [ email, password ] = getInput()
     writeUser(email, password)
-      .then((id) => console.log(id))
   }
 
   const handleSignIn = async (e: MouseEvent) => {
     e.preventDefault()
     const [ email, password ] = getInput()
     readUser(email, password)
-      .then((id) => console.log(id))
   }
 
 

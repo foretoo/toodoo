@@ -1,26 +1,40 @@
 ul.todo-list
   list-style: none
-  padding: 0 1rem
 
 li.todo-item
-  padding: 1rem 0
   display: flex
-  gap: 0.5rem
-  border-bottom: 1px solid var(--bg)
-
+  align-items: center
   &:last-child
-    border-bottom: 1px solid transparent
+    > span
+      border-bottom: 1px solid transparent
+  &:hover
+    > button,
+    > label
+      opacity: 1
+
+  > label,
+  > button
+    flex-shrink: 0
+    transition: opacity 0.5s
+    opacity: 0
+
+  > label
+    line-height: 0
+    font-size: 0
+    padding: 1rem
+    cursor: pointer
 
   > span
     flex-grow: 1
-
-  > input,
-  > button
-    flex-shrink: 0
+    padding: 1rem 0
+    border-bottom: 1px solid var(--bg)
 
   > span.done
+    color: var(--text-m)
     text-decoration: line-through
 
-  > button.del
+  > button
+    width: 3rem
+    height: 3rem
     color: var(--text-l)
     background-color: transparent

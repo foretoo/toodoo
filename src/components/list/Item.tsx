@@ -10,7 +10,9 @@ export const Item = (
 ) => {
   return (
     <li className="todo-item">
-      <input type="checkbox" checked={done} onChange={(e) => completeDoo(e, id)} />
+      <label>
+        <input type="checkbox" checked={done} onChange={(e) => completeDoo(e, id)} />
+      </label>
       <span className={done ? "done" : ""}>{name}</span>
       <button className="del" onClick={() => deleteDoo(id)} >✕</button>
     </li>

@@ -1,4 +1,5 @@
 import { IToDo } from "app/types"
+import { useState } from "preact/hooks"
 import { Checkbox } from "./Checkbox"
 
 type ItemProps = IToDo & {
@@ -11,11 +12,17 @@ export const Item = (
   { completeDoo, deleteDoo, name, done, id }: ItemProps
 ) => {
 
+  const [ mouseOver, setMouseOver ] = useState(false)
+
   return (
-    <li className="todo-item">
-      <Checkbox id={id} done={done} completeDoo={completeDoo} />
+    <li 
+      className="todo-item"
+      onMouseOver={() => setMouseOver(true)}
+      onMouseOut={() => setMouseOver(false)}
+    >
+      <Checkbox id={id} done={done} completeDoo={completeDoo} over={mouseOver} />
       <span className={done ? "done" : ""}>{name}</span>
-      <button className="del" onClick={() => deleteDoo(id)} >✕</button>
+      <button className="del" onClick={() => deleteDoo(id)}>✕</button>
     </li>
   )
 }

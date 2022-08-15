@@ -1,32 +1,18 @@
 import { useState } from "preact/hooks"
+import { SwitchButton } from "./SwitchButton"
 import "./theme-switcher.sass"
 
 
-export type Theme = "DARK" | "AUTO" | "LIGHT"
+export type ITheme = "DARK" | "AUTO" | "LIGHT"
 export const ThemeSwitcher = () => {
 
-  const [ theme, setTheme ] = useState<Theme>("AUTO")
+  const [ theme, setTheme ] = useState<ITheme>("AUTO")
 
   return (
     <fieldset className="theme-switcher">
-      <button
-        className={theme === "DARK" ? "active" : undefined}
-        onClick={() => setTheme("DARK")}
-        >
-          dark
-        </button>
-      <button
-        className={theme === "AUTO" ? "active" : undefined}
-        onClick={() => setTheme("AUTO")}
-        >
-          auto
-        </button>
-      <button
-        className={theme === "LIGHT" ? "active" : undefined}
-        onClick={() => setTheme("LIGHT")}
-        >
-          light
-        </button>
+      <SwitchButton mode="DARK"  theme={theme} setTheme={setTheme} />
+      <SwitchButton mode="AUTO"  theme={theme} setTheme={setTheme} />
+      <SwitchButton mode="LIGHT" theme={theme} setTheme={setTheme} />
     </fieldset>
   )
 }

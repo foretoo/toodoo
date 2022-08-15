@@ -1,8 +1,8 @@
 import { StateUpdater } from "preact/hooks"
-import { ILocalTheme } from "./ThemeSwitcher"
+import { IOutTheme } from "./ThemeContext"
 
 export const SwitchButton = (
-  { mode, theme, setTheme }: { mode: ILocalTheme, theme: ILocalTheme, setTheme: StateUpdater<ILocalTheme> }
+  { mode, theme, setTheme }: { mode: IOutTheme, theme: IOutTheme, setTheme: StateUpdater<IOutTheme> }
 ) => {
   return (
     <button

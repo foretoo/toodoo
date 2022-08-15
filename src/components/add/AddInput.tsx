@@ -15,7 +15,7 @@ export const AddInput = (
       type="text"
       value={value}
       onInput={handleInput}
-      placeholder="new ..."
+      placeholder="..."
     />
   )
 }

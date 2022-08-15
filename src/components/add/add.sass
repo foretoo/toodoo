@@ -1,13 +1,20 @@
 form.adddoo
+  position: relative
   height: 3rem
   display: flex
   overflow: hidden
+  &::before
+    content: "new"
+    margin-left: 1rem
+    position: absolute
+    line-height: 3rem
+    color: var(--text-m)
 
   > *
-    padding: 0 1rem
     background-color: transparent
 
   > input
+    padding: 0 1rem 0 calc(3rem - 2px)
     margin: 2px
     flex-grow: 1
     border-radius: calc(1rem - 2px)
@@ -17,4 +24,5 @@ form.adddoo
       color: var(--text-m)
 
   > button
+    padding: 0 1rem
     flex-shrink: 0

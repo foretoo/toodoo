@@ -67,7 +67,6 @@ export const ThemeSwitcher = () => {
   return (
     <fieldset className="theme-switcher">
       <SwitchButton mode="DARK"  theme={theme} setTheme={setTheme} />
-      <SwitchButton mode="AUTO"  theme={theme} setTheme={setTheme} />
       <SwitchButton mode="LIGHT" theme={theme} setTheme={setTheme} />
     </fieldset>
   )

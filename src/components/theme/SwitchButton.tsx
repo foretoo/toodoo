@@ -1,13 +1,13 @@
 import { StateUpdater } from "preact/hooks"
-import { ITheme } from "./ThemeSwitcher"
+import { ILocalTheme } from "./ThemeSwitcher"
 
 export const SwitchButton = (
-  { mode, theme, setTheme }: { mode: ITheme, theme: ITheme, setTheme: StateUpdater<ITheme> }
+  { mode, theme, setTheme }: { mode: ILocalTheme, theme: ILocalTheme, setTheme: StateUpdater<ILocalTheme> }
 ) => {
   return (
     <button
       className={theme === mode ? "active" : ""}
-      onClick={() => setTheme(mode)}
+      onClick={() => setTheme(theme === mode ? "AUTO" : mode)}
     >
       {mode.toLocaleLowerCase()}
     </button>

@@ -1,5 +1,5 @@
 import "./list.sass"
-import { writeCompleteToDo, writeToDo } from "service/data"
+import { writeToDo } from "service/data"
 import { useData } from "app/context"
 import { Item } from "./Item"
 
@@ -8,12 +8,6 @@ import { Item } from "./Item"
 export const List = () => {
   
   const data = useData()
-
-  const completeDoo = (e: Event, id: number) => {
-    const label = e.target as HTMLLabelElement
-    const done = (label.children[0] as HTMLInputElement).checked
-    writeCompleteToDo(id, !done)
-  }
   
   const deleteDoo = (id: number) => {
     const todo = data.todo.filter((_, i) => i !== id)
@@ -26,7 +20,6 @@ export const List = () => {
     return (
       <Item
         key={`${id}-${done}-${name}`}
-        completeDoo={completeDoo}
         deleteDoo={deleteDoo}
         name={name}
         done={done}

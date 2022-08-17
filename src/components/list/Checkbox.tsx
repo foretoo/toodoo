@@ -1,28 +1,34 @@
+import { writeCompleteToDo } from "service/data"
 import { useHoverAnimation } from "./useHoverAnimation"
 
 type CheckboxProps = {
   id: number,
   done: boolean,
   over: boolean,
-  completeDoo: (e: Event, id: number) => void
 }
 
 export const Checkbox = (
-  { id, done, over, completeDoo }: CheckboxProps
+  { id, done, over }: CheckboxProps
 ) => {
 
-  const labelRef = useHoverAnimation(over)
+  const labelRef = useHoverAnimation<HTMLLabelElement>(over)
+
+  const handleDone = (id: number) => {
+    const icon = labelRef.current!.children[0] as SVGElement
+    const done = icon.classList.contains("done")
+    writeCompleteToDo(id, !done)
+  }
 
   const handleClick = (e: MouseEvent) => {
     e.preventDefault()
     e.stopPropagation()
-    completeDoo(e, id)
+    handleDone(id)
   }
 
   const handleKeypress = (e: KeyboardEvent) => {
     if (e.code === "Space" || e.code === "Enter") {
       e.preventDefault()
-      completeDoo(e, id)
+      handleDone(id)
     }
   }
 

@@ -1,3 +1,4 @@
+import { DoneIcon, KeenIcon } from "components/shared"
 import { writeCompleteToDo } from "service/data"
 import { useHoverAnimation } from "./useHoverAnimation"
 
@@ -39,12 +40,7 @@ export const Checkbox = (
       onClick={handleClick}
       onKeyPress={handleKeypress}
     >
-      <input
-        type="checkbox"
-        checked={done}
-        onClick={(e) => e.preventDefault()}
-        tabIndex={-1}
-      />
+      {done ? <DoneIcon /> : <KeenIcon />}
     </label>
   )
 }

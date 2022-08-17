@@ -1,12 +1,12 @@
 import { gsap } from "gsap"
 import { useRef } from "preact/hooks"
 
-export const useHoverAnimation = (
+export const useHoverAnimation = <T extends HTMLOrSVGElement>(
   over: boolean
 ) => {
 
   const overRef = useRef(false)
-  const elementRef = useRef(null)
+  const elementRef = useRef<T>(null)
 
   if (overRef.current !== over) {
     overRef.current = over

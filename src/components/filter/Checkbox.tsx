@@ -1,3 +1,4 @@
+import { DoneIcon, KeenIcon } from "components/shared"
 import { forwardRef } from "preact/compat"
 
 type BoxProps = {
@@ -13,8 +14,8 @@ export const Checkbox = forwardRef<HTMLLabelElement[], BoxProps>((
 
   const getValue = (e: Event) => {
     const label = e.target as HTMLLabelElement
-    const input = label.children[0] as HTMLInputElement
-    return input.checked
+    const icon = label.children[0] as SVGElement
+    return icon.classList.contains("done")
   }
 
   const handleClick = (e: MouseEvent) => {
@@ -38,13 +39,7 @@ export const Checkbox = forwardRef<HTMLLabelElement[], BoxProps>((
       onClick={handleClick}
       onKeyPress={handleKeypress}
     >
-      <input
-        type="checkbox"
-        checked={checked}
-        disabled={isActive() ? false : true}
-        tabIndex={-1}
-        onClick={(e) => e.preventDefault()}
-      />
+      {checked ? <DoneIcon /> : <KeenIcon />}
     </label>
   )
 })

@@ -5,6 +5,7 @@ export const Footer = () => {
   return (
     <footer>
       <ThemeSwitcher />
+      <a href="https://github.com/foretoo/toodoo">repo</a>
     </footer>
   )
 }
